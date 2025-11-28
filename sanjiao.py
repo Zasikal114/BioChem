@@ -1,0 +1,144 @@
+import py4cytoscape as p4c
+import logging
+
+def set_enzyme_nodes_to_triangle():
+    """
+    将 TYPE 属性为 'enzyme' 的节点形状设置为三角形
+    """
+    try:
+        # 1. 检查 Cytoscape 连接
+        p4c.cytoscape_ping()
+        print("✓ 成功连接到 Cytoscape")
+        
+        # 2. 检查是否有网络加载
+        network_list = p4c.get_network_list()
+        if not network_list:
+            print("❌ 当前没有加载任何网络")
+            return False
+        
+        current_network = network_list[0]
+        network_name = p4c.get_network_name(current_network)
+        print(f"✓ 当前网络: {network_name} (SUID: {current_network})")
+        
+        # 3. 明确设置当前网络
+        p4c.set_current_network(current_network)
+        print("✓ 已设置当前网络")
+        
+        # 4. 检查节点表是否有 TYPE 列
+        node_columns = p4c.get_table_column_names('node', network=current_network)
+        print(f"✓ 节点表列名: {list(node_columns)}")
+        
+        if 'TYPE' not in node_columns:
+            print("❌ 节点表中没有找到 'TYPE' 列")
+            return False
+        
+        # 5. 获取 TYPE 为 enzyme 的节点
+        # 使用表格查询方式选择节点
+        node_table = p4c.get_table_columns('node', network=current_network)
+        enzyme_nodes = node_table[node_table['TYPE'] == 'enzyme'].index.tolist()
+        
+        if not enzyme_nodes:
+            print("❌ 没有找到 TYPE 为 'enzyme' 的节点")
+            unique_types = node_table['TYPE'].dropna().unique()
+            print(f"   当前网络中的 TYPE 值: {list(unique_types)}")
+            return False
+            
+        node_count = len(enzyme_nodes)
+        print(f"✓ 找到 {node_count} 个 TYPE 为 'enzyme' 的节点")
+        
+        # 6. 设置节点形状为三角形
+        # 使用正确的函数和参数
+        try:
+            # 方法1: 使用 set_node_shape_bypass
+            p4c.set_node_shape_bypass(
+                node_names=enzyme_nodes,
+                new_shapes='TRIANGLE',
+                network=current_network
+            )
+            print(f"✓ 成功将 {node_count} 个酶节点形状设置为三角形")
+        except Exception as e:
+            print(f"❌ 设置节点形状失败: {e}")
+            # 尝试备选方法
+            try:
+                # 方法2: 使用 update_style_mapping
+                p4c.update_style_mapping(
+                    style_name='default',
+                    mapping_type='discrete',
+                    visual_property='NODE_SHAPE',
+                    table_column='TYPE',
+                    mappings=[{'key': 'enzyme', 'value': 'TRIANGLE'}],
+                    network=current_network
+                )
+                print(f"✓ 备选方法成功设置节点形状映射")
+            except Exception as e2:
+                print(f"❌ 备选方法也失败: {e2}")
+                return False
+        
+        # 7. 可选：应用视觉样式以确保更改可见
+        try:
+            # 确保使用正确的视觉样式
+            styles = p4c.get_visual_style_names()
+            print(styles)
+            if 'Sample1' in styles:
+                p4c.set_visual_style('Sample1', network=current_network)
+                print("✓ 应用了 Sample1 视觉样式")
+            else:
+                p4c.set_visual_style(styles[0], network=current_network)
+                print(f"✓ 应用了 {styles[0]} 视觉样式")
+        except Exception as e:
+            print(f"ℹ️ 无法应用视觉样式: {e}")
+        
+        # 8. 可选：重新布局以更好地显示变化
+        try:
+            p4c.layout_network('force-directed', network=current_network)
+            print("✓ 应用了力导向布局")
+        except Exception as e:
+            print(f"ℹ️ 布局未应用: {e}")
+        
+        return True
+        
+    except Exception as e:
+        print(f"❌ 执行过程中出现错误: {e}")
+        logging.exception("详细错误信息:")
+        return False
+
+if __name__ == "__main__":
+    print("=" * 50)
+    print("酶节点形状设置工具")
+    print("=" * 50)
+    
+    # 先尝试主方法
+    success = set_enzyme_nodes_to_triangle()
+    
+    if success:
+        print("\n" + "="*30)
+        print("任务执行成功！")
+        print("🎉 酶节点形状已设置为三角形")
+        print("提示: 请在 Cytoscape 界面中查看更改效果")
+        
+        # 验证结果
+        try:
+            networks = p4c.get_network_list()
+            if networks:
+                node_table = p4c.get_table_columns('node', network=networks[0])
+                enzyme_nodes = node_table[node_table['TYPE'] == 'enzyme'].index.tolist()
+                print(f"验证: 找到 {len(enzyme_nodes)} 个酶节点")
+                
+                # 尝试获取一个酶节点的形状
+                if enzyme_nodes:
+                    try:
+                        shape = p4c.get_node_property(enzyme_nodes[0], 'NODE_SHAPE', network=networks[0])
+                        print(f"示例节点形状: {shape}")
+                    except:
+                        print("无法获取节点形状属性")
+        except Exception as e:
+            print(f"验证失败: {e}")
+            
+    else:
+        print("\n❌ 所有方法都失败了")
+        print("请尝试以下手动方法:")
+        print("1. 在 Cytoscape 界面中，选择 'Select' -> 'Select Nodes by Column Value'")
+        print("2. 选择列 'TYPE'，值 'enzyme'")
+        print("3. 在样式面板中，将节点形状改为三角形")
+    
+    print("=" * 50)
