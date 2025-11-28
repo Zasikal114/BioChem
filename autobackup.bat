@@ -8,4 +8,4 @@ git commit -m "auto backup %date% %time%"
 git push
 
 echo backup completed.
-timeout 5
+timeout 60
