@@ -1,5 +1,5 @@
 @echo off
-echo 开始自动备份...
+echo starting backup...
 
 cd /d "C:\Users\lenovo\Desktop\jython"
 
@@ -7,5 +7,5 @@ git add .
 git commit -m "自动备份: %date% %time%"
 git push
 
-echo 备份完成!
+echo backup completed.
 timeout 5
