@@ -1,4 +1,0 @@
-# 设置酶节点为菱形（最接近三角形）
-vizmap set nodeShape DIAMOND column=TYPE value=enzyme
-vizmap set nodeFillColor #FF6666 column=TYPE value=enzyme
-vizmap set nodeSize 60 column=TYPE value=enzyme
