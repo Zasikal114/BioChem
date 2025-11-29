@@ -50,6 +50,7 @@ def set_edge_styles():
                 visual_property='EDGE_SOURCE_ARROW_SHAPE',
                 new_values='NONE'
             )
+            # 设置目标箭头颜色为绿色
             p4c.set_edge_property_bypass(
                 edge_names=activate_suids,
                 visual_property='EDGE_TARGET_ARROW_UNSELECTED_PAINT',
@@ -85,6 +86,7 @@ def set_edge_styles():
                 visual_property='EDGE_TARGET_ARROW_SHAPE',
                 new_values='T'
             )
+            # 设置目标箭头颜色为红色
             p4c.set_edge_property_bypass(
                 edge_names=inhibit_suids,
                 visual_property='EDGE_TARGET_ARROW_UNSELECTED_PAINT',
