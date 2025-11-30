@@ -1,0 +1,262 @@
+在ExcelB前两列中未出现的值:
+========================================
+id
+coa
+hydrogen
+hydrogen peroxide
+phosphohexose isomerase
+1,6-bisphosphate fructose
+aldolase
+1,3-bisphosphoglycerate
+3-phosphate glyceraldehyde dehydrogenase
+3-phosphoglycerate
+phosphoglycerate kinase
+enolase
+2-phosphoglycerate
+photoglycerate mutase
+phosphoenolpyruvate
+pyruvate carboxylase
+pep carboxykinase
+fructose 1,6-bisphosphatase-1
+glyoxylate
+isocitrate lyase
+malate synthetase
+pyruvate dehydrogenase complex
+citrate synthase
+isocitrate
+aconitase
+isocitrate dehydrogenase
+α-ketogutarate dehydrogenase complex
+succinyl-coa synthetase
+succinate dehydrogenase
+fumarase
+malate
+malate dehydrogenase
+nitrogen
+nitrate
+nitrite
+ammonia
+nitrogenase
+dinitrogenase reductase
+ferredoxin
+flavodoxin
+glutamate synthase
+glucosamine-6-phosphate
+adenylyltransferase
+adenylylation
+deadenylylation
+p-ii
+p-ii-ump
+uridylylation
+deuridylylation
+uridylyltransferase
+5-phosphate ribose
+gmp
+ump
+cmp
+damp
+dgmp
+dtmp
+dcmp
+udp
+cdp
+dadp
+dgdp
+dtdp
+dcdp
+utp
+ctp
+datp
+dgtp
+dttp
+dctp
+threonine dehydratase
+α-ketobutyrate
+prpp
+glutamine-prpp amidotransferase
+5-phospho-β-d-ribosylamine
+gar
+fgar
+fgam
+air
+cair
+saicar
+aicar
+faicar
+n5-cair
+n10-formyl h4 folate
+imp
+adenylosuccinate synthetase
+adenylosuccinate
+adenylosuccinatelyase
+imp dehydrogenase
+xmp
+xmp-glutamine amidotransferase
+ribose phosphate pyrophosphokinase
+carbamoyl phosphate synthetase ii
+aspartate transcarbamoylase
+n-carbamoylaspartate
+dihydroorotase
+l-dihydroorotate
+dihydroorotate dehydrogenase
+orotate
+orotate phosphoribosyltransferase
+orotidylate
+orotidylate decarboxylase
+cytidylate synthetase
+amp kinase
+gmp kinase
+ump kinase
+cmp kinase
+ndp kinase
+gsh
+glutaredoxin
+thioredoxin
+ribonucleotide reductase
+deaminase
+dutp
+dutpase
+dump
+thymidylate synthase
+n5,n10-methylenetetratydrofolate
+7,8-dihydrofolate
+dihydrofolate reductase
+tetrahydrofolate
+5'-nucleotidase
+adenosine
+guanosine
+inosine
+nucleosidase
+guanine
+guanine deaminase
+hypoxanthine
+xanthine
+allopurinol
+thymine
+uricil
+dihydrouracil dehydrogenase
+cytosine
+dihydrothymine
+dehydrouricil
+dihydropyrimidinease
+β-ureideisobutyrate
+β-ureidopropionate
+β-ureidopropionase
+β-aminoisobutyrate
+β-alanine​
+aminotransferase
+methylmalonylsemialdehyde
+malonylsemialdehyde
+adenine
+azaserine
+acivicin
+fluorouracil
+methotrexate
+aminopterin
+trimethoprim
+rebonucleotide reductase
+dudp
+uric acid
+propionyl-coa
+adenosine deaminase
+hypoxanthine-guanine phosphoribosyltransferase
+adenine phosphoribosyltransferase
+serine hydroxymethyltransferase
+xanthine oxidase
+electron
+nadh dehydrogenase
+qh2
+cyt b
+cytochrome bc1 complex
+cyt c
+q
+cytochrome oxidase
+atp synthase
+malate-α-ketoglutarate transporter
+malate(intermembrane space)
+malate(matrix)
+glutamate-aspartate transporter
+oxaloacetate(matrix)
+aspartate(matrix)
+aspartate(intermembrane space)
+glutamate(matrix)
+glutamate(intermembrane space)
+α-ketogutarate（matrix)
+α-ketogutarate(intermembrane space)
+oxaloacetate(intermembrane space)
+dnp
+fccp
+valinomycin
+thermogenin
+cytosolic 3-phosphate glycerol dehydrogenase
+oligomycin
+chlorophylls
+bacteriochlorophyll
+carotenoids
+phycocilins
+photon
+ps2
+cyt b6f complex
+plastocyanin
+ps1
+pq
+pq2
+h2s
+s
+lactate
+(ch2o)
+p680
+p680*
+pheo
+pqa
+pqb
+p700
+p700*
+a0
+a1
+fe-s
+fd
+fd:nadp+ oxidoreductase
+o2 evolving complex
+cyclic electron flow:
+p700
+p700*
+a0
+a1
+fe-s
+fd
+proton 2(in stroma)
+proton 3(in thylakoid lumen)
+proton 2(in mitochondrial intermembrane space)
+proton 3(in mitocondrial matrix)
+β-atp
+β-empty
+β-adp
+adenine nucleotide translocase
+phosphate translocase
+atp4-(in mitocondrial matrix)
+atp4-(in mitochondrial intermembrane space)
+adp3-(in mitocondrial matrix)
+adp3-(in mitochondrial intermembrane space)
+h2po4-(in mitochondrial intermembrane space)
+h2po4-(in mitocondrial matrix)
+cyanide
+carbon monoxide
+antimycin a
+myxothiazol
+rotenone
+amytal
+piericidin a
+dcmu
+aurovertin
+oligomycin
+venturicidin
+dccd
+atractyloside
+lactonase
+calcium ion
+0
+triose phosphate isomerase
+bicarbonate radical
+cis-δ3-acyl-coa
+α-ketoglutarate
