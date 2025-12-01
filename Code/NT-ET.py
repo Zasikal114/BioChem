@@ -145,9 +145,6 @@ def main():
         print("ExcelA第一列的所有值都在ExcelB的前两列中出现了！")
     
 
-
-
-
 if __name__ == "__main__":
     
     print("\n" + "="*60 + "\n")
