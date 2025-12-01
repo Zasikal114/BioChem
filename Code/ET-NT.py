@@ -40,8 +40,8 @@ def find_unique_cells(file_a_path, file_b_path):
 
 if __name__ == "__main__":
     # 在这里修改为您的Excel文件路径
-    file_a_path = r"C:\Users\lenovo\Desktop\Biochem\Table\edge table.xlsx"  # 请修改为文件A的实际路径
-    file_b_path = r"C:\Users\lenovo\Desktop\Biochem\Table\node table.xlsx"  # 请修改为文件B的实际路径
+    file_a_path = r"C:\Users\lenovo\Desktop\jython\Table\edge table.xlsx"  # 请修改为文件A的实际路径
+    file_b_path = r"C:\Users\lenovo\Desktop\jython\Table\node table.xlsx"  # 请修改为文件B的实际路径
     
     find_unique_cells(file_a_path, file_b_path)
     
