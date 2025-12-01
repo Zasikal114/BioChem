@@ -123,7 +123,7 @@ if __name__ == "__main__":
     # 使用方法示例
     
     # 方法1: 直接指定文件路径
-    excel_file_path = r"C:\Users\lenovo\Desktop\jython\Table\node table (1)_filled.xlsx"  # 请将此处替换为你的Excel文件路径
+    excel_file_path = r"C:\Users\lenovo\Desktop\jython\Table\node table.xlsx"  # 请将此处替换为你的Excel文件路径
     
     # 基本用法
     print("=== 基本重复检测 ===")
