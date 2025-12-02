@@ -47,9 +47,7 @@ def sort_excel_by_rules():
         if len(pathway_columns) == 0:
             print("警告: 未找到以'Pathway：'开头的列")
         
-        # 显示排序前的数据
-        print("\n排序前的前5行数据:")
-        print(df.head().to_string())
+        
         
         # 创建排序键列
         print("\n开始排序...")
@@ -82,46 +80,6 @@ def sort_excel_by_rules():
         print(f"排序完成！已覆盖原文件: {file_path}")
         print(f"排序后数据形状: {df_sorted.shape} (行数: {len(df_sorted)}, 列数: {len(df_sorted.columns)})")
         
-        # 显示排序后的前几行作为验证
-        print("\n排序后的前5行:")
-        print(df_sorted.head().to_string())
-        
-        # 验证排序是否真的生效
-        print("\n验证排序结果:")
-        print("1. 检查TYPE列的顺序:")
-        print(df_sorted[type_column].value_counts())
-        
-        # 检查排序是否正确
-        print("\n2. 检查排序是否正确:")
-        common_rows = df_sorted[df_sorted[type_column].str.strip().str.lower() == 'common']
-        other_rows = df_sorted[df_sorted[type_column].str.strip().str.lower() != 'common']
-        
-        print(f"common行数: {len(common_rows)}")
-        print(f"其他行数: {len(other_rows)}")
-        
-        # 检查common行是否真的在前面
-        if len(common_rows) > 0 and len(other_rows) > 0:
-            first_common_idx = common_rows.index[0]
-            first_other_idx = other_rows.index[0]
-            if first_common_idx < first_other_idx:
-                print("✓ common行确实在其他行前面")
-            else:
-                print("✗ 排序错误: common行不在其他行前面")
-        
-        # 检查Pathway列排序是否正确
-        if len(pathway_columns) > 0:
-            print(f"\n3. 检查Pathway列排序:")
-            for i, col in enumerate(pathway_columns):
-                print(f"  列 {i+1}: {col}")
-                # 检查common行内的Pathway列排序
-                if len(common_rows) > 0:
-                    print(f"  common行内 {col} 的值分布:")
-                    print(common_rows[col].value_counts().sort_index())
-                
-                # 检查其他行内的Pathway列排序
-                if len(other_rows) > 0:
-                    print(f"  其他行内 {col} 的值分布:")
-                    print(other_rows[col].value_counts().sort_index())
         
         # 比较排序前后的差异
         if not df.equals(df_sorted):

@@ -87,7 +87,7 @@ def mark_pathways_simple():
             if source_mask.any():
                 nodes_df.loc[source_mask, col_name] = 1
                 marked_nodes_count += source_mask.sum()
-                print(f"  ✓ 标记节点 '{source_node}' 属于通路 '{pathway}'")
+                #print(f"  ✓ 标记节点 '{source_node}' 属于通路 '{pathway}'")
             else:
                 print(f"  ⚠ 警告: 源节点 '{source_node}' 在节点表中未找到")
             
@@ -96,7 +96,7 @@ def mark_pathways_simple():
             if target_mask.any():
                 nodes_df.loc[target_mask, col_name] = 1
                 marked_nodes_count += target_mask.sum()
-                print(f"  ✓ 标记节点 '{target_node}' 属于通路 '{pathway}'")
+                #print(f"  ✓ 标记节点 '{target_node}' 属于通路 '{pathway}'")
             else:
                 print(f"  ⚠ 警告: 目标节点 '{target_node}' 在节点表中未找到")
         
