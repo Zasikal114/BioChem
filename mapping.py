@@ -57,7 +57,7 @@ def mark_pathways_simple():
         print("\n步骤5: 在节点表中创建通路列")
         new_columns_added = 0
         for pathway in pathway_names:
-            col_name = f'Pathway：{pathway}'
+            col_name = f'Pathway:{pathway}'
             if col_name not in nodes_df.columns:
                 nodes_df[col_name] = 0
                 new_columns_added += 1
@@ -80,7 +80,7 @@ def mark_pathways_simple():
             if pd.isna(pathway) or pathway == 'Pathway':
                 continue
             
-            col_name = f'Pathway：{pathway}'
+            col_name = f'Pathway:{pathway}'
             
             # 标记源节点
             source_mask = nodes_df.iloc[:, 0].astype(str) == source_node
@@ -104,7 +104,7 @@ def mark_pathways_simple():
         print("\n步骤7: 统计标记结果")
         total_marks = 0
         for pathway in pathway_names:
-            col_name = f'Pathway：{pathway}'
+            col_name = f'Pathway:{pathway}'
             if col_name in nodes_df.columns:
                 mark_count = nodes_df[col_name].sum()
                 total_marks += mark_count
