@@ -90,7 +90,7 @@ def main():
     # ===== 在这里设置你的参数 =====
     
     # 要运行的脚本所在文件夹路径
-    folder_path = r"C:\Users\lenovo\Desktop\jython\good-layout"  # 修改为你的文件夹路径
+    folder_path = r"C:\Users\lenovo\Desktop\jython\good-style"  # 修改为你的文件夹路径
     
     # 每个脚本运行后的延迟时间（秒）
     delay = 1
