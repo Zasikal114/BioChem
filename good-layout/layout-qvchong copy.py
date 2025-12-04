@@ -185,11 +185,7 @@ def layout_path_way_nodes_calculated(pathway,count):
                     new_x_locations=[x],
                     new_y_locations=[y]
                 )
-                locked_status = p4c.get_node_property(
-                node_names=[node_name],
-                visual_property='NODE_LOCKED'
-                )           
-                print(f"节点锁定状态: {locked_status}")
+                
         
         # 17. 将本次设置的节点添加到记录文件中
         with open(record_file, 'a') as f:

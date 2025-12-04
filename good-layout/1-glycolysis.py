@@ -120,7 +120,7 @@ def layout_path_way_nodes_calculated(refer):
         
         #读取excel文件，从中获取相对坐标
         #在最底下设置参考点是啥
-        df = pd.read_excel('good-layout/relative_coordinates.csv')
+        df = pd.read_excel('good-layout/relative_coordinates.xlsx')
 
         for i, node_info in enumerate(nodes_to_layout):
             x = refer_x + relative_x
