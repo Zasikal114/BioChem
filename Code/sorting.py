@@ -5,9 +5,9 @@ import os
 def sort_excel_by_rules():
     """
     对Excel文件进行排序，在原文件上直接修改
-    排序规则：
+    排序规则:
     1. 先按TYPE列，值为"common"的行排在前面，其他值视为同等
-    2. 对于TYPE列相同的行，按所有以"Pathway："开头的列从左到右排序，1排在0上面
+    2. 对于TYPE列相同的行，按所有以"Pathway:"开头的列从左到右排序，1排在0上面
     3. 保持无法确定顺序的行的原始相对顺序
     """
     
@@ -31,7 +31,7 @@ def sort_excel_by_rules():
         
         # 识别列
         type_column = "TYPE"
-        pathway_columns = [col for col in df.columns if col.startswith('Pathway：')]
+        pathway_columns = [col for col in df.columns if col.startswith('Pathway:')]
         
         print(f"找到TYPE列 '{type_column}': {type_column in df.columns}")
         if type_column in df.columns:
@@ -45,14 +45,14 @@ def sort_excel_by_rules():
             return
         
         if len(pathway_columns) == 0:
-            print("警告: 未找到以'Pathway：'开头的列")
+            print("警告: 未找到以'Pathway:'开头的列")
         
         
         
         # 创建排序键列
         print("\n开始排序...")
         
-        # 第一优先级：TYPE列（common在前，其他值视为同等）
+        # 第一优先级:TYPE列（common在前，其他值视为同等）
         df['_temp_type'] = df[type_column].apply(
             lambda x: 0 if str(x).strip().lower() == 'common' else 1
         )
