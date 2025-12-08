@@ -65,7 +65,29 @@ def set_node_shapes():
         
         print(f"\n✓ 形状设置完成！共处理了 {processed_count} 个节点")
         
-        # 将enzyme节点大小设置为40
+
+        # 将所有节点的高度设置为50，宽度设置为120，文本最大宽度为100
+        all_node_suids = node_table['SUID'].tolist()
+        p4c.set_node_property_bypass(
+            node_names=all_node_suids,
+            visual_property='NODE_HEIGHT',
+            new_values=50
+        )
+        print(f"✓ 已将所有节点高度设置为 50")
+        p4c.set_node_property_bypass(
+            node_names=all_node_suids,
+            visual_property='NODE_WIDTH',
+            new_values=120
+        )
+        print(f"✓ 已将所有节点宽度设置为 120")
+        p4c.set_node_property_bypass(
+            node_names=all_node_suids,
+            visual_property='NODE_LABEL_WIDTH',
+            new_values=100
+        )
+        print(f"✓ 已将所有节点文本最大宽度设置为 100")
+
+        # 将enzyme节点大小设置为40，高度设置为40，宽度设置为60，文本最大宽度为70
         enzyme_nodes = node_table[node_table.get('TYPE') == 'enzyme']
         if not enzyme_nodes.empty:
             enzyme_suids = enzyme_nodes['SUID'].tolist()
@@ -75,6 +97,26 @@ def set_node_shapes():
                 new_values=40
             )
             print(f"✓ 已将 enzyme 节点大小设置为 40")
+            p4c.set_node_property_bypass(
+                node_names=enzyme_suids,
+                visual_property='NODE_HEIGHT',
+                new_values=80
+            )
+            print(f"✓ 已将 enzyme 节点高度设置为 80")
+            p4c.set_node_property_bypass(
+                node_names=enzyme_suids,
+                visual_property='NODE_WIDTH',
+                new_values=80
+            )
+            print(f"✓ 已将 enzyme 节点宽度设置为 80")
+            p4c.set_node_property_bypass(
+                node_names=enzyme_suids,
+                visual_property='NODE_LABEL_WIDTH',
+                new_values=70
+            )
+            print(f"✓ 已将 enzyme 节点文本最大宽度设置为 70")
+
+        
 
         return True
     

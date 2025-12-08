@@ -33,9 +33,9 @@ def set_edge_line_types():
             'reaction': 'SOLID',
             'reaction(s)': 'SEPARATE_ARROW',
             'transport': 'DOT',
-            'activate': 'DASH_DOT',
+            'activate': 'LONG_DASH',
             'inhibit': 'SOLID',
-            'electron flow': 'LONG_DASH',
+            'electron flow': 'DASH_DOT',
             'photon flow': 'ZIGZAG'
         }
         
