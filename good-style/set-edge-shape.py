@@ -30,13 +30,13 @@ def set_edge_line_types():
         
         # 5. 定义连接类型映射
         relationship_mapping = {
-            'reaction': 'CONTIGUOUS_ARROW',
+            'reaction': 'SOLID',
             'reaction(s)': 'SEPARATE_ARROW',
-            'transport': 'ZIGZAG',
+            'transport': 'DOT',
             'activate': 'DASH_DOT',
-            'inhibit': 'VERTICAL_SLASH',
+            'inhibit': 'SOLID',
             'electron flow': 'LONG_DASH',
-            'photon flow': 'DOT'
+            'photon flow': 'ZIGZAG'
         }
         
         # 6. 为每种连接类型设置对应的线条类型
@@ -61,7 +61,19 @@ def set_edge_line_types():
             )
             
             print(f"✓ 已将 '{relationship}' 关系的边线条类型设置为 {line_type}")
-        
+        # 7.将所有的箭头设置为单向箭头
+        all_edge_suids = edge_table['SUID'].tolist()
+        p4c.set_edge_property_bypass(
+            edge_names=all_edge_suids,
+            visual_property='EDGE_TARGET_ARROW_SHAPE',
+            new_values='ARROW'
+        )
+        p4c.set_edge_property_bypass(
+            edge_names=all_edge_suids,
+            visual_property='EDGE_SOURCE_ARROW_SHAPE',
+            new_values='NONE'
+        )
+        print("\n✓ 线条类型设置完成！")
         return True
         
     except Exception as e:

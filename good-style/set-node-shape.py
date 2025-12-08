@@ -33,7 +33,7 @@ def set_node_shapes():
         type_to_shape = {
             'metabolite': 'RECTANGLE',
             'state': 'RECTANGLE',
-            'enzyme': 'TRIANGLE',
+            'enzyme': 'ROUND_RECTANGLE',
             'hormone': 'OCTAGON',
             'drug': 'HEXAGON',
             'inhibitor': 'PARALLELOGRAM',
@@ -64,8 +64,20 @@ def set_node_shapes():
                 print(f"✓ 已将 {node_type} 节点设置为 {shape} 形状")
         
         print(f"\n✓ 形状设置完成！共处理了 {processed_count} 个节点")
-        return True
         
+        # 将enzyme节点大小设置为40
+        enzyme_nodes = node_table[node_table.get('TYPE') == 'enzyme']
+        if not enzyme_nodes.empty:
+            enzyme_suids = enzyme_nodes['SUID'].tolist()
+            p4c.set_node_property_bypass(
+                node_names=enzyme_suids,
+                visual_property='NODE_SIZE',
+                new_values=40
+            )
+            print(f"✓ 已将 enzyme 节点大小设置为 40")
+
+        return True
+    
     except Exception as e:
         print(f"❌ 执行过程中出现错误: {str(e)}")
         return False
