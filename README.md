@@ -18,6 +18,6 @@
 
 本次使用了py4cytoscape的Python包和cytoscape的yFiles插件，想要复现的同学们可以安装。
 
-不想安装cytoscape的同学可以从'/master/webpage'目录下通过浏览器打开index.html。
+不想安装cytoscape的同学可以从解压.zip文件，通过浏览器打开index.html。
 
 网页可以快速体验，但是功能非常受限。
