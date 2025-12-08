@@ -34,6 +34,7 @@ def set_node_shapes():
             'metabolite': 'RECTANGLE',
             'state': 'RECTANGLE',
             'enzyme': 'ROUND_RECTANGLE',
+            'transporter': 'ROUND_RECTANGLE',
             'hormone': 'OCTAGON',
             'drug': 'HEXAGON',
             'inhibitor': 'PARALLELOGRAM',
